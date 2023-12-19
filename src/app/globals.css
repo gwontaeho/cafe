@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -24,4 +24,44 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+} */
+
+@layer components {
+    .page {
+        @apply w-full max-w-screen-md flex-1 flex flex-col;
+    }
+    .header {
+        @apply h-14 flex items-center px-5 space-x-5;
+    }
+    .button {
+        @apply w-full text-sm block appearance-none p-3 outline-none border rounded;
+    }
+    .input {
+        @apply w-full text-sm block appearance-none p-3 outline-none border rounded bg-gray-50 aria-[invalid=true]:border-red-500 focus:border-primary;
+    }
+    .select {
+        @apply w-full text-sm block appearance-none p-3 outline-none border rounded bg-gray-50 focus:border-primary;
+    }
+    .textarea {
+        @apply w-full text-sm block appearance-none p-3 outline-none border rounded bg-gray-50 resize-none aria-[invalid=true]:border-red-500 focus:border-primary;
+    }
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    letter-spacing: 0.1em;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 100%;
+}
+
+pre {
+    font-family: inherit;
 }
